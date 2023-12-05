@@ -13,9 +13,11 @@ class MALExtractor:
             Included fields: "name", "link", "
         """
 
+        # Starting URL template for MyAnimeList's top animes leaderboard
         url = "https://myanimelist.net/topanime.php?limit="
         animeData = []
 
+        # Iterates through pages containing 50 animes at a time
         for i in range(pageNum):
             rankingEntries = self.getPageAnimeEntries(url + str(i * 50))
             for entry in rankingEntries:
